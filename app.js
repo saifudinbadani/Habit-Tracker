@@ -12,22 +12,16 @@ let date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
 let habitStorage = [];
 
 
-// showDate.innerText = date;
 
-// function addHabit(){
-//     let newHabit = document.createElement('p')
-//     let habitText = document.createTextNode(habitInput.value);
-//     newHabit.appendChild(habitText);
-//     displayHabits.appendChild(newHabit);
-//     habitStorage.push(habitInput.value);
-    
-
-// }
 
 //CRUD Functions
 function addHabit(){
     habitStorage.push({name: habitInput.value,
-    date: Date.now()});        
+    date: Date.now()});   
+    // displayHabits.innerText = habitStorage.keys(name)
+    // showDate.innerText = habitStorage.keys(date) 
+    
+    console.log(Object.values(habitStorage));
 }
 // Update function
 //takes the habit to update and new habit
