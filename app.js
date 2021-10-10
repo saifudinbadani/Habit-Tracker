@@ -1,35 +1,57 @@
+let habitParentList = document.querySelector('#habitList')
+let habitList = document.getElementsByTagName('li');
 let habitInput = document.querySelector('#habitInput');
-let addHabitBtn = document.querySelector('#addHabitBtn');
-let showDate =document.querySelector('#showDate');
-let displayHabits = document.querySelector('#displayHabits');
+
+
+let addBtn = document.querySelector('#addButton');
+
+
+function createHabit(){
+    let addHabitToList = document.createElement('li');
+    let captureText = document.createTextNode(habitInput.value);
+    addHabitToList.appendChild(captureText);
+    if(habitInput.value === ''){
+        alert('Write something')
+    }
+    else{
+        habitParentList.appendChild(addHabitToList);
+        habitInput.value = '';
+    }
+    
+}
+
+addBtn.addEventListener("click", createHabit())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // created date object with constructor
 
-let today = new Date();
+// let today = new Date();
+
 // designed a let to give today's date and month has index value, so solved that by adding plus 1
 
-let date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
-let habitStorage = [];
+// todaysDate.innerText = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
+// let habitStorage = [];
 
 
 
-
-//CRUD Functions
-function addHabit(){
-    habitStorage.push({name: habitInput.value,
-    date: Date.now()});   
-    // displayHabits.innerText = habitStorage.keys(name)
-    // showDate.innerText = habitStorage.keys(date) 
-    
-    console.log(Object.values(habitStorage));
-}
-// Update function
-//takes the habit to update and new habit
-// find the old habit index and replace it with new one.
-//
-
-console.log(habitStorage);
-addHabitBtn.addEventListener('click', addHabit)
-
-// functional tasks
-// UI
