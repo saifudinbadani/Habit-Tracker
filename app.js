@@ -20,7 +20,7 @@ function createHabit(){
     
 }
 
-addBtn.addEventListener("click", createHabit())
+addBtn.addEventListener("click", createHabit)
 
 
 
